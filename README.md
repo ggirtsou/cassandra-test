@@ -13,7 +13,7 @@ $ nc -vz cassandra.test-cassandra_app_net 9042
 $ cqlsh cassandra.test-cassandra_app_net 9042 cassandra -u cassandra -p cassandra
 
 # see if Go can connect to Cassandra (has IP hardcoded in test file)
-$ go test -v ./...
+$ GO111MODULE=on CGO_ENABLED=0 go test -v ./...
 ```
 From host:
 ```
