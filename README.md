@@ -23,14 +23,11 @@ docker-compose up -d # wait for cassandra to settle and then observe logs in tes
 ## Troubleshooting
 
 ```bash
-$ docker run --rm -it --network cassandra-test_app_net test-cassandra bash
+$ docker run --rm -it --network test-cassandra_app_net test-cassandra bash
 $ nc -vz cassandra 9042
 
 # note the values in the config: https://github.com/ggirtsou/cassandra-test/blob/master/dev/cassandra.yaml#L612
 # broadcast address: https://github.com/ggirtsou/cassandra-test/blob/master/dev/cassandra.yaml#L626
-
-# or try with cassandra.test-cassandra_app_net, cassandra.docker.internal, cassandra as host
-$ cqlsh 172.16.239.12 9042 cassandra -u cassandra -p cassandra
 
 # see if Go can connect to Cassandra (has IP hardcoded in test file)
 $ GO111MODULE=on CGO_ENABLED=0 go test -v ./...
