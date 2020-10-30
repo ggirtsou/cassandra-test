@@ -55,7 +55,6 @@ tcp6       0      0 :::9042                 :::*                    LISTEN      
 * I also tried using older versions of gocql as suggested in various comments here: https://github.com/gocql/gocql/issues/946
 * https://github.com/gocql/gocql/issues/997
 * https://stackoverflow.com/questions/32072680/cassandra-is-forcing-to-open-cql-native-port-on-ipv6-interface
-* https://github.com/gocql/gocql/issues/997
 * https://stackoverflow.com/questions/41373122/getting-cassandra-to-listen-on-9042-properly
 * https://groups.google.com/a/lists.datastax.com/g/java-driver-user/c/TERfynufkfg
 * https://support.datastax.com/hc/en-us/articles/207433496-Unable-to-connect-to-DSE-via-native-protocol-over-IPv6
