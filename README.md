@@ -6,7 +6,7 @@ docker-compose up -d # wait for cassandra to settle and then observe logs in tes
 Troubleshooting
 
 ```
-$ docker run --rm -it --network test-cassandra_app_net test-cassandra bash
+$ docker run --rm -it --network cassandra-test_app_net test-cassandra bash
 $ nc -vz cassandra.test-cassandra_app_net 9042
 
 # or try with 172.16.239.12, cassandra.docker.internal, cassandra as host
@@ -14,7 +14,9 @@ $ cqlsh cassandra.test-cassandra_app_net 9042 cassandra -u cassandra -p cassandr
 
 # see if Go can connect to Cassandra (has IP hardcoded in test file)
 $ go test -v ./...
-
+```
+From host:
+```
 # another thing you can try is to install cqlsh / DataGrip locally and try to connect
 cqlsh 127.0.0.1 9042 cassandra -u cassandra -p cassandra --cqlversion="3.4.4" # run from host - this works!
 
