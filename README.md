@@ -52,7 +52,7 @@ tcp6       0      0 :::9042                 :::*                    LISTEN      
 
 ## References
 
-* I also tried using an older versions of gocql as suggested in various comments here: https://github.com/gocql/gocql/issues/946
+* I also tried using older versions of gocql as suggested in various comments here: https://github.com/gocql/gocql/issues/946
 * https://github.com/gocql/gocql/issues/997
 * https://stackoverflow.com/questions/32072680/cassandra-is-forcing-to-open-cql-native-port-on-ipv6-interface
 * https://github.com/gocql/gocql/issues/997
