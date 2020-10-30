@@ -19,9 +19,10 @@ func TestCassandraConnect(t *testing.T) {
 		Password: "cassandra",
 	}
 
-	_, err := cluster.CreateSession()
+	sess, err := cluster.CreateSession()
 	if err != nil {
 		panic(err)
 	}
+	defer sess.Close()
 	fmt.Println("cassandra init done")
 }
