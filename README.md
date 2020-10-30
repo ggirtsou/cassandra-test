@@ -7,7 +7,7 @@ Troubleshooting
 
 ```
 $ docker run --rm -it --network cassandra-test_app_net test-cassandra bash
-$ nc -vz cassandra.test-cassandra_app_net 9042
+$ nc -vz cassandra 9042
 
 # note the values in the config: https://github.com/ggirtsou/cassandra-test/blob/master/dev/cassandra.yaml#L612
 # broadcast address: https://github.com/ggirtsou/cassandra-test/blob/master/dev/cassandra.yaml#L626
