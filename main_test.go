@@ -12,10 +12,7 @@ func TestCassandraConnect(t *testing.T) {
 	cluster.Port = 9042
 	cluster.CQLVersion = "3.4.4"
 	cluster.ProtoVersion = 4
-	// cluster.DisableInitialHostLookup = true
-	cluster.Keyspace = "system"  // that keyspace is not modifiable by user
-	cluster.Timeout = 300        // in ms
-	cluster.ConnectTimeout = 300 // in ms
+	cluster.Keyspace = "system" // that keyspace is not modifiable by user
 	cluster.Consistency = gocql.Quorum
 	cluster.Authenticator = gocql.PasswordAuthenticator{
 		Username: "cassandra",

@@ -8,8 +8,8 @@ services:
             - 7001:7001 # cluster communication (SSL)
             - 9042:9042 # cql
         environment:
+            # this has no effect because we are passing our own config from dev/
             - CASSANDRA_BROADCAST_ADDRESS=172.16.239.12
-            - TZ=Etc/GMT # use UTC
         volumes:
             - ${PWD}/dev:/etc/cassandra
         networks:
@@ -21,7 +21,10 @@ services:
         # bash into the container to run the tests manually
         image: test-cassandra
         restart: always
-        entrypoint: ["cqlsh", "cassandra.test-cassandra_app_net", "9042", "cassandra", "-u", "cassandra", "-p", "cassandra"]
+        entrypoint: ["go", "test", "-v", "./..."]
+        environment:
+            - GO111MODULE=on
+            - CGO_ENABLED=0
         depends_on:
             - cassandra
         networks:
