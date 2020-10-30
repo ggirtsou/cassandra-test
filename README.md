@@ -9,7 +9,7 @@ Troubleshooting
 $ docker run --rm -it --network test-cassandra_app_net test-cassandra bash
 $ nc -vz cassandra.test-cassandra_app_net 9042
 
-# or try with 172.16.239.12, cssandra.docker.internal, cassandra as host
+# or try with 172.16.239.12, cassandra.docker.internal, cassandra as host
 $ cqlsh cassandra.test-cassandra_app_net 9042 cassandra -u cassandra -p cassandra
 
 # see if Go can connect to Cassandra (has IP hardcoded in test file)
